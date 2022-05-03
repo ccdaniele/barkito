@@ -6,8 +6,4 @@ class User < ApplicationRecord
         my_vendor_followers=VendorFollower.all.filter{|vendor_follower|vendor_follower.user.id === self.id}
         my_vendor_followers.map{|vendor_follower|vendor_follower.vendor}
     end
-
-
-
-
 end

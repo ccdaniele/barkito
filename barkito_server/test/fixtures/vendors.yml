@@ -5,37 +5,39 @@ one:
   vendor_email: MyString
   vendor_website: MyString
   vendor_phone_number: 1
-  vendor_address: MyString
+  vendor_neighborhood: MyString
+  building_number: MyString
+  vendor_borough: MyString
+  vendor_street: MyString
+  vendor_city: MyString
+  zip_code: 1
   vendor_category: MyString
   vendor_subcategory: MyString
-  crew_id: 1
-  vendor_founded_date: 2022-04-30
+  seating: MyString
+  crew: MyString
+  vendor_founded_date: 2022-05-03
   vendor_accepted_payment: MyString
-  admin_user_id: 1
-  deals_id: 1
-  review_id: 1
-  community_user_id: 1
-  performer_id: 1
-  menu_id: 1
-  event_id: 1
-  reservation_id: 1
+  open_time: 2022-05-03 01:53:30
+  closing_time: 2022-05-03 01:53:30
+  working_days: MyString
 
 two:
   vendor_name: MyString
   vendor_email: MyString
   vendor_website: MyString
   vendor_phone_number: 1
-  vendor_address: MyString
+  vendor_neighborhood: MyString
+  building_number: MyString
+  vendor_borough: MyString
+  vendor_street: MyString
+  vendor_city: MyString
+  zip_code: 1
   vendor_category: MyString
   vendor_subcategory: MyString
-  crew_id: 1
-  vendor_founded_date: 2022-04-30
+  seating: MyString
+  crew: MyString
+  vendor_founded_date: 2022-05-03
   vendor_accepted_payment: MyString
-  admin_user_id: 1
-  deals_id: 1
-  review_id: 1
-  community_user_id: 1
-  performer_id: 1
-  menu_id: 1
-  event_id: 1
-  reservation_id: 1
+  open_time: 2022-05-03 01:53:30
+  closing_time: 2022-05-03 01:53:30
+  working_days: MyString

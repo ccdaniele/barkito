@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'smarter_csv' 
 
-file='/Users/daniel.calderon/vue_ruby_real/vue_ruby v1.0/barkito_server/db/lic_db.csv'
+file='/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/db/lic_db.csv'
 
 options = {}
 SmarterCSV.process(file, options) do |chunk|
@@ -15,4 +15,3 @@ SmarterCSV.process(file, options) do |chunk|
     Vendor.create!( data_hash )
   end
 end
-

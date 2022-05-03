@@ -1,8 +1,7 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
-
-import UserForm from './components/userform'
+import UserContainer from './components/user/userContainer'
+import UserForm from './components/user/userForm'
 
 class App extends React.Component{
   constructor(){
@@ -29,22 +28,17 @@ class App extends React.Component{
     }
   }
 
-    // componentDidMount(){
+    componentDidMount(){
   
-    //   fetch('http://localhost:3000/toys')
-    //   .then(rsp => rsp.json())
-    //   .then(data =>{
-    //     this.setState({toys: data
+      fetch('http://localhost:4000/users')
+      .then(rsp => rsp.json())
+      .then(data =>{
+        this.setState({users: data
+          })
+      }) 
+    }
   
-    //     }
-  
-    //     )
-    //   }) 
-  
-  
-    // }
-  
-    toyNewName = (event)=>{
+    newUser = (event)=>{
       this.setState({
         user_name: "",
         borough: "", 
@@ -91,7 +85,7 @@ class App extends React.Component{
   
      event.target.reset()
       
-      fetch('http://localhost:3000/toys',newObj)
+      fetch('http://localhost:4000/toys',newObj)
       .then(rsp => rsp.json())
       .then(data =>{
       
@@ -102,12 +96,12 @@ class App extends React.Component{
   
     }
   
-    // handleClick = () => {
-    //   let newBoolean = !this.state.display
-    //   this.setState({
-    //     display: newBoolean
-    //   })
-    // }
+    handleClick = () => {
+      let newBoolean = !this.state.display
+      this.setState({
+        display: newBoolean
+      })
+    }
   
     // handleLike = (id) =>{
     
@@ -142,44 +136,39 @@ class App extends React.Component{
   
     // }
   
-    // donateToy = (id) =>{
+    deleteUser = (id) =>{
   
     
-    //     fetch(`http://localhost:3000/toys/${id}`,{method: 'DELETE'})
-    //     .then(rsp => rsp.json())
-    //     .then(data =>{
+        fetch(`http://localhost:4000/toys/${id}`,{method: 'DELETE'})
+        .then(rsp => rsp.json())
+        .then(data =>{
           
-    //      const updatedToys = this.state.toys.filter(toy => {
-    //         if(toy.id !== id){
-    //           return toy
-    //         } 
-    //       })
+         const updatedUsers = this.state.users.filter(user => {
+            if(user.id !== id){
+              return user
+            } 
+          })
   
-    //       this.setState({
-    //         toys: updatedToys
-    //       })
-    //     })
-    // } 
+          this.setState({
+            users: updatedUsers
+          })
+        })
+    } 
   
     render(){
       return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+        <>
+            <UserForm addNewUser={this.addNewUser} newUser={this.newUser}/>
 
-export default App;
+          <div className="buttonContainer">
+            <button onClick={this.handleClick}> Add user </button>
+          </div>
+          <UserContainer users = {this.state} deleteUser={this.createUser}/>
+        </>
+      );
+    }
+  
+  }
+  
+  export default App;
+  
