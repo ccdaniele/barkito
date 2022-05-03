@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_name: MyString
+  user_address: MyString
+  user_gender: MyString
+  user_description: MyString
+  user_date_of_birth: 2022-04-30
+  user_email: MyString
+  user_password_digest: MyString
+  vendor_id: 1
+  performer_id: 1
+  friend_user_id: 1
+  menu_id: 1
+  event_id: 1
+  reservation_id: 1
+  review_id: 1
+  bar_admin: 1
+  performer_admin: 1
+  crew_member: 1
+
+two:
+  user_name: MyString
+  user_address: MyString
+  user_gender: MyString
+  user_description: MyString
+  user_date_of_birth: 2022-04-30
+  user_email: MyString
+  user_password_digest: MyString
+  vendor_id: 1
+  performer_id: 1
+  friend_user_id: 1
+  menu_id: 1
+  event_id: 1
+  reservation_id: 1
+  review_id: 1
+  bar_admin: 1
+  performer_admin: 1
+  crew_member: 1

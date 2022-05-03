@@ -1,0 +1,2 @@
+json.extract! query, :id, :user_id, :query_start, :query_start_time, :query_end, :query_end_time, :neighborhood, :zip_code, :city, :date_start, :date_end, :vendor, :event, :performer, :menu, :category, :subcategory, :ranking, :sitting, :user, :user_name, :vendor_name, :event_name, :price_rank, :review_rank, :deal_name, :deal_r_start, :deal_r_end, :menu_name, :menu, :created_at, :updated_at
+json.url query_url(query, format: :json)

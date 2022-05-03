@@ -1,0 +1,63 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  query_start: 2022-04-30
+  query_start_time: 2022-04-30 12:30:40
+  query_end: 2022-04-30
+  query_end_time: 2022-04-30 12:30:40
+  neighborhood: MyString
+  zip_code: 1
+  city: MyString
+  date_start: 2022-04-30
+  date_end: 2022-04-30
+  vendor: false
+  event: false
+  performer: false
+  menu: false
+  category: MyString
+  subcategory: MyString
+  ranking: 1
+  sitting: MyString
+  user: false
+  user_name: MyString
+  vendor_name: MyString
+  event_name: MyString
+  price_rank: 1
+  review_rank: 1
+  deal_name: MyString
+  deal_r_start: 1
+  deal_r_end: 1
+  menu_name: MyString
+  menu: false
+
+two:
+  user_id: 1
+  query_start: 2022-04-30
+  query_start_time: 2022-04-30 12:30:40
+  query_end: 2022-04-30
+  query_end_time: 2022-04-30 12:30:40
+  neighborhood: MyString
+  zip_code: 1
+  city: MyString
+  date_start: 2022-04-30
+  date_end: 2022-04-30
+  vendor: false
+  event: false
+  performer: false
+  menu: false
+  category: MyString
+  subcategory: MyString
+  ranking: 1
+  sitting: MyString
+  user: false
+  user_name: MyString
+  vendor_name: MyString
+  event_name: MyString
+  price_rank: 1
+  review_rank: 1
+  deal_name: MyString
+  deal_r_start: 1
+  deal_r_end: 1
+  menu_name: MyString
+  menu: false

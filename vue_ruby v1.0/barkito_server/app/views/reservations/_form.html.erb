@@ -1,0 +1,62 @@
+<%= form_with(model: reservation) do |form| %>
+  <% if reservation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+        <% reservation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :reservation_name, style: "display: block" %>
+    <%= form.text_field :reservation_name %>
+  </div>
+
+  <div>
+    <%= form.label :reservation_description, style: "display: block" %>
+    <%= form.text_field :reservation_description %>
+  </div>
+
+  <div>
+    <%= form.label :reservation_category, style: "display: block" %>
+    <%= form.text_field :reservation_category %>
+  </div>
+
+  <div>
+    <%= form.label :reservation_subcategory, style: "display: block" %>
+    <%= form.text_field :reservation_subcategory %>
+  </div>
+
+  <div>
+    <%= form.label :reservation_number_people, style: "display: block" %>
+    <%= form.number_field :reservation_number_people %>
+  </div>
+
+  <div>
+    <%= form.label :reservation_date, style: "display: block" %>
+    <%= form.date_field :reservation_date %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :bar_id, style: "display: block" %>
+    <%= form.number_field :bar_id %>
+  </div>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

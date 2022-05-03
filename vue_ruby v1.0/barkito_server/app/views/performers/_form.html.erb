@@ -1,0 +1,82 @@
+<%= form_with(model: performer) do |form| %>
+  <% if performer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(performer.errors.count, "error") %> prohibited this performer from being saved:</h2>
+
+      <ul>
+        <% performer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :performer_name, style: "display: block" %>
+    <%= form.text_field :performer_name %>
+  </div>
+
+  <div>
+    <%= form.label :performer_description, style: "display: block" %>
+    <%= form.text_field :performer_description %>
+  </div>
+
+  <div>
+    <%= form.label :performer_email, style: "display: block" %>
+    <%= form.text_field :performer_email %>
+  </div>
+
+  <div>
+    <%= form.label :performer_website, style: "display: block" %>
+    <%= form.text_field :performer_website %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_id, style: "display: block" %>
+    <%= form.number_field :vendor_id %>
+  </div>
+
+  <div>
+    <%= form.label :follower_user_id, style: "display: block" %>
+    <%= form.number_field :follower_user_id %>
+  </div>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :perfomer_rank, style: "display: block" %>
+    <%= form.number_field :perfomer_rank %>
+  </div>
+
+  <div>
+    <%= form.label :performers_user_id, style: "display: block" %>
+    <%= form.number_field :performers_user_id %>
+  </div>
+
+  <div>
+    <%= form.label :performer_category, style: "display: block" %>
+    <%= form.text_field :performer_category %>
+  </div>
+
+  <div>
+    <%= form.label :performer_subcategory, style: "display: block" %>
+    <%= form.text_field :performer_subcategory %>
+  </div>
+
+  <div>
+    <%= form.label :review_id, style: "display: block" %>
+    <%= form.number_field :review_id %>
+  </div>
+
+  <div>
+    <%= form.label :performer_content, style: "display: block" %>
+    <%= form.text_field :performer_content %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

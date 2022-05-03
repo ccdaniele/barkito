@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reservation_name: MyString
+  reservation_description: MyString
+  reservation_category: MyString
+  reservation_subcategory: MyString
+  reservation_number_people: 1
+  reservation_date: 2022-04-30
+  user_id: 1
+  bar_id: 1
+  event_id: 1
+
+two:
+  reservation_name: MyString
+  reservation_description: MyString
+  reservation_category: MyString
+  reservation_subcategory: MyString
+  reservation_number_people: 1
+  reservation_date: 2022-04-30
+  user_id: 1
+  bar_id: 1
+  event_id: 1

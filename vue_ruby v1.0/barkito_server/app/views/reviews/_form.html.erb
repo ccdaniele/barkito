@@ -1,0 +1,57 @@
+<%= form_with(model: review) do |form| %>
+  <% if review.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+        <% review.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :review_title, style: "display: block" %>
+    <%= form.text_field :review_title %>
+  </div>
+
+  <div>
+    <%= form.label :review_description, style: "display: block" %>
+    <%= form.text_field :review_description %>
+  </div>
+
+  <div>
+    <%= form.label :review_rank, style: "display: block" %>
+    <%= form.number_field :review_rank %>
+  </div>
+
+  <div>
+    <%= form.label :review_price_rank, style: "display: block" %>
+    <%= form.number_field :review_price_rank %>
+  </div>
+
+  <div>
+    <%= form.label :review_date, style: "display: block" %>
+    <%= form.date_field :review_date %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :bar_id, style: "display: block" %>
+    <%= form.number_field :bar_id %>
+  </div>
+
+  <div>
+    <%= form.label :performer_id, style: "display: block" %>
+    <%= form.number_field :performer_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

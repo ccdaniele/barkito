@@ -1,0 +1,107 @@
+<%= form_with(model: vendor) do |form| %>
+  <% if vendor.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
+
+      <ul>
+        <% vendor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :vendor_name, style: "display: block" %>
+    <%= form.text_field :vendor_name %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_email, style: "display: block" %>
+    <%= form.text_field :vendor_email %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_website, style: "display: block" %>
+    <%= form.text_field :vendor_website %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_phone_number, style: "display: block" %>
+    <%= form.number_field :vendor_phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_address, style: "display: block" %>
+    <%= form.text_field :vendor_address %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_category, style: "display: block" %>
+    <%= form.text_field :vendor_category %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_subcategory, style: "display: block" %>
+    <%= form.text_field :vendor_subcategory %>
+  </div>
+
+  <div>
+    <%= form.label :crew_id, style: "display: block" %>
+    <%= form.number_field :crew_id %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_founded_date, style: "display: block" %>
+    <%= form.date_field :vendor_founded_date %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_accepted_payment, style: "display: block" %>
+    <%= form.text_field :vendor_accepted_payment %>
+  </div>
+
+  <div>
+    <%= form.label :admin_user_id, style: "display: block" %>
+    <%= form.number_field :admin_user_id %>
+  </div>
+
+  <div>
+    <%= form.label :deals_id, style: "display: block" %>
+    <%= form.number_field :deals_id %>
+  </div>
+
+  <div>
+    <%= form.label :review_id, style: "display: block" %>
+    <%= form.number_field :review_id %>
+  </div>
+
+  <div>
+    <%= form.label :community_user_id, style: "display: block" %>
+    <%= form.number_field :community_user_id %>
+  </div>
+
+  <div>
+    <%= form.label :performer_id, style: "display: block" %>
+    <%= form.number_field :performer_id %>
+  </div>
+
+  <div>
+    <%= form.label :menu_id, style: "display: block" %>
+    <%= form.number_field :menu_id %>
+  </div>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :reservation_id, style: "display: block" %>
+    <%= form.number_field :reservation_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

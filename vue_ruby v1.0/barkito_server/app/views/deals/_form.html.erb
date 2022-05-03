@@ -1,0 +1,62 @@
+<%= form_with(model: deal) do |form| %>
+  <% if deal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+        <% deal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :deal_title, style: "display: block" %>
+    <%= form.text_field :deal_title %>
+  </div>
+
+  <div>
+    <%= form.label :deal_start_time, style: "display: block" %>
+    <%= form.date_field :deal_start_time %>
+  </div>
+
+  <div>
+    <%= form.label :deal_end_time, style: "display: block" %>
+    <%= form.date_field :deal_end_time %>
+  </div>
+
+  <div>
+    <%= form.label :deal_description, style: "display: block" %>
+    <%= form.text_field :deal_description %>
+  </div>
+
+  <div>
+    <%= form.label :bar_id, style: "display: block" %>
+    <%= form.number_field :bar_id %>
+  </div>
+
+  <div>
+    <%= form.label :deal_discount, style: "display: block" %>
+    <%= form.number_field :deal_discount %>
+  </div>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :deal_category, style: "display: block" %>
+    <%= form.text_field :deal_category %>
+  </div>
+
+  <div>
+    <%= form.label :deal_subcategory, style: "display: block" %>
+    <%= form.text_field :deal_subcategory %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= form_with(model: user_friend) do |form| %>
+  <% if user_friend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_friend.errors.count, "error") %> prohibited this user_friend from being saved:</h2>
+
+      <ul>
+        <% user_friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :friends_id, style: "display: block" %>
+    <%= form.number_field :friends_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
