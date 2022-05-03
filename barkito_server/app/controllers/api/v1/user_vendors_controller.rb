@@ -1,4 +1,4 @@
-class UserVendorsController < ApplicationController
+class Api::V1::UserVendorsController < ApplicationController
   before_action :set_user_vendor, only: %i[ show update destroy ]
 
   # GET /user_vendors
