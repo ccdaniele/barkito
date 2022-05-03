@@ -5,13 +5,3 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'smarter_csv' 
-
-file='/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/db/lic_db.csv'
-
-options = {}
-SmarterCSV.process(file, options) do |chunk|
-  chunk.each do |data_hash|
-    Vendor.create!( data_hash )
-  end
-end

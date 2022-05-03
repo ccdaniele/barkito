@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  resources :user_vendors
-  resources :vendors
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :api do
+    namespace :v1 do
+      resources :users, :vendors
+      get '/users', to: 'users#index'
+      get '/vendors', to: 'vendors#index'
+      post '/users', to: 'users#create'
+      post '/vendors', to: 'vendors#create'
+      patch '/users', to: 'users#update'
+      patch '/vendors', to: 'vendors#update'
+      
+    end
+  end
 end

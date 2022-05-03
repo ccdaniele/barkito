@@ -1,2 +1,0 @@
-json.extract! vendor, :id, :vendor_name, :vendor_email, :vendor_website, :vendor_phone_number, :vendor_neighborhood, :building_number, :vendor_borough, :vendor_street, :vendor_city, :zip_code, :vendor_category, :vendor_subcategory, :seating, :crew, :vendor_founded_date, :vendor_accepted_payment, :open_time, :closing_time, :working_days, :created_at, :updated_at
-json.url vendor_url(vendor, format: :json)
