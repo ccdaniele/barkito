@@ -1,130 +1,94 @@
-import React from 'react';
-import './App.css';
-import UserContainer from './components/user/userContainer'
-import UserForm from './components/user/userForm'
+import {Route, Switch,withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {Nav} from 'react-bootstrap'
+import Login from './components/user/login'
+import SignUp from './components/user/signUp'
+import Home from './components/navigation/home'
+import {currentUser} from './actions/user.action'
+import React, {Component} from 'react'
 
-class App extends React.Component{
+
+
+class App extends Component{
   constructor(){
     super()
-  
-    this.state = {
-      users: [],
-      newUser: {user_name: ''
-      },
+    this.state={
+      currentUser: ''
     }
   }
-
-  // Send create and send this user to the backend
-
-  addNewUser = (event)=>{
-
-    // create the user profile 
-    event.preventDefault()
-
-    const newUser = {
-        user_name: event.target[0].value
-    }
-    //create the json object to send: method, headers, body  
-    const newObj = { method:'POST',
-      headers: {
-       'Content-Type': 'application/json',
-      },
-     body: JSON.stringify(newUser)
-     }
-
-    //  reset the form
-  
-    event.target.reset()
-
-    // Fetch request which hit the end point and send the object.
-   
-      fetch('http://localhost:3000/api/v1/users',newObj)
-      .then(rsp => rsp.json())
-      .then(data =>{
-        this.setState({
-          users: [...this.state.users, data]
-        })
-        console.log(data.status)
-      })
-    }
-  
-  
-    render(){
-      return (
-        <>
-            <UserForm newUser={this.newUser} addNewUser={this.addNewUser}/>
-          {/* <div className="buttonContainer">
-            <button onClick={this.handleClick}> set user_name </button>
-          </div> */}
-          {/* <UserContainer users = {this.state} deleteUser={this.createUser}/> */}
-        </>
-      );
-    }
-  
+  render(){
+    return (
+      <div>
+        <Nav/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/signup" component={SignUp}/>
+          </Switch>
+      </div>
+    );
   }
+}
   
-  export default App;
+const mapDispathToProps ={
 
-    // deleteUser = (id) =>{    //     fetch(`http://localhost:3000/api/v1/user${id}`,{method: 'DELETE'})
-    //     .then(rsp => rsp.json())
-    //     .then(data =>{
-          
-    //      const updatedUsers = this.state.users.filter(user => {
-    //         if(user.id !== id){
-    //           return user
-    //         } 
-    //       })
-  
-    //       this.setState({
-    //         users: updatedUsers
-    //       })
-    //     })
-    // } 
+  currentUser
+}
 
-   // componentDidMount(){
-  
-    //   fetch('http://localhost:3000/api/v1/users')
-    //   .then(rsp => rsp.json())
-    //   .then(data =>{
-    //     this.setState({users: data
-    //       })
-    //   }) 
-    // }
-  
+const mapStateToProps = (state)=>{
+  return {
+    
+      user: state.userData
+  }
+}
 
-  
-  
-    // addNewUser = (event)=>{
-    //   event.preventDefault()
-    //   console.log(event)
-    //   const newUser = {
-        
-    //     user_name: event.target.children[1].value,
-    //   }
-      
+export default connect (mapStateToProps, mapDispathToProps) (withRouter(App));
 
 
-       
-    //  const newObj = { method:'POST',
-    //  headers: {
-    //    'Content-Type': 'application/json',
 
-    // },
-    //  body: JSON.stringify(newUser)
-    //  }
-  
-    //  event.target.reset()
-      
-    //   fetch('http://localhost:3000/api/v1/users',newObj)
-    //   .then(rsp => rsp.json())
-    //   .then(data =>{
-      
-    //     this.setState({
-    //       users: [...this.state.users, data]
-    //   })
-    //   })
-  
-    // }
+
+// <UserForm newUser={this.newUser} addNewUser={this.addNewUser}/>
+
+//   this.state = {
+//     users: [],
+//     newUser: {user_name: ''
+//     },
+//   }
+// }
+
+// Send create and send this user to the backend
+
+// addNewUser = (event)=>{
+
+//   // create the user profile 
+//   event.preventDefault()
+
+//   const newUser = {
+//       user_name: event.target[0].value
+//   }
+//   //create the json object to send: method, headers, body  
+//   const newObj = { method:'POST',
+//     headers: {
+//      'Content-Type': 'application/json',
+//     },
+//    body: JSON.stringify(newUser)
+//    }
+
+//   //  reset the form
+
+//   event.target.reset()
+
+//   // Fetch request which hit the end point and send the object.
+ 
+//     fetch('http://localhost:3000/api/v1/users',newObj)
+//     .then(rsp => rsp.json())
+//     .then(data =>{
+//       this.setState({
+//         users: [...this.state.users, data]
+//       })
+//       console.log(data.status)
+//     })
+//   }
   
     // handleClick = () => {
     //   let newBoolean = !this.state.display

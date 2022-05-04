@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_163333) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "nick_name"
     t.string "user_name"
     t.string "user_borough"
     t.string "user_neighborhood"
