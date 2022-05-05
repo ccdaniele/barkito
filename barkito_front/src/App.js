@@ -51,7 +51,7 @@ export default connect (mapStateToProps, mapDispathToProps) (withRouter(App));
 
 //   this.state = {
 //     users: [],
-//     newUser: {user_name: ''
+//     newUser: {username: ''
 //     },
 //   }
 // }
@@ -64,7 +64,7 @@ export default connect (mapStateToProps, mapDispathToProps) (withRouter(App));
 //   event.preventDefault()
 
 //   const newUser = {
-//       user_name: event.target[0].value
+//       username: event.target[0].value
 //   }
 //   //create the json object to send: method, headers, body  
 //   const newObj = { method:'POST',

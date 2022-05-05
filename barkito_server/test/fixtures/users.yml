@@ -1,45 +1,35 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_name: MyString
-  string: MyString
+  username: MyString
   user_borough: MyString
-  string: MyString
   user_neighborhood: MyString
-  string: MyString
   user_street: MyString
-  string: MyString
   user_city: MyString
-  string: MyString
-  user_zip_code: MyString
-  string: MyString
+  user_zip_code: 1
   gender: MyString
   user_description: MyString
-  user_birth: 2022-05-03
+  user_birth: 2022-05-04
   user_email: MyString
   password_digest: MyString
+  password_confirmation: MyString
   vendor_admin: false
   performer_admin: false
   crew_member: false
 
 two:
-  user_name: MyString
-  string: MyString
+  username: MyString
   user_borough: MyString
-  string: MyString
   user_neighborhood: MyString
-  string: MyString
   user_street: MyString
-  string: MyString
   user_city: MyString
-  string: MyString
-  user_zip_code: MyString
-  string: MyString
+  user_zip_code: 1
   gender: MyString
   user_description: MyString
-  user_birth: 2022-05-03
+  user_birth: 2022-05-04
   user_email: MyString
   password_digest: MyString
+  password_confirmation: MyString
   vendor_admin: false
   performer_admin: false
   crew_member: false

@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      resources :users, :vendors
+      resources :users, param: :_username
       get '/users', to: 'users#index'
       get '/vendors', to: 'vendors#index'
       get '/current_user', to: 'auth#show'
-      post '/users', to: 'users#create'
       post '/vendors', to: 'vendors#create'
-      post '/login', to: 'auth#create'
+      post '/auth/login', to: 'authentication#login'
       patch '/users', to: 'users#update'
       patch '/vendors', to: 'vendors#update'
-    end
-  end
+      get '/*a', to: 'application#not_found'
 end
+

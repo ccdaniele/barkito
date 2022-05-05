@@ -15,10 +15,10 @@ one:
   vendor_subcategory: MyString
   seating: MyString
   crew: MyString
-  vendor_founded_date: 2022-05-03
+  vendor_founded_date: 2022-05-04
   vendor_accepted_payment: MyString
-  open_time: 2022-05-03 09:33:19
-  closing_time: 2022-05-03 09:33:19
+  open_time: 2022-05-04 16:30:43
+  closing_time: 2022-05-04 16:30:43
   working_days: MyString
 
 two:
@@ -36,8 +36,8 @@ two:
   vendor_subcategory: MyString
   seating: MyString
   crew: MyString
-  vendor_founded_date: 2022-05-03
+  vendor_founded_date: 2022-05-04
   vendor_accepted_payment: MyString
-  open_time: 2022-05-03 09:33:19
-  closing_time: 2022-05-03 09:33:19
+  open_time: 2022-05-04 16:30:43
+  closing_time: 2022-05-04 16:30:43
   working_days: MyString

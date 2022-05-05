@@ -4,7 +4,7 @@ export default class SignUp extends Component {
     constructor(){
         super()
         this.state={
-            user_name:'',
+            username:'',
             nick_name:'',
             user_email:'',
             password:'',
@@ -23,35 +23,29 @@ export default class SignUp extends Component {
             },
             body: JSON.stringify({
               user: {
-                user_name:this.state.nick_name,
-                nick_name: this.state.nick_name,
+                username: this.state.nick_name,
                 user_email: this.state.email,
-                password: this.state.password,
-                // password_confirm: this.state.passwordConfirm
+                password_digest: this.state.password,
+                password_confirmation: this.state.passwordConfirm
               }
             })
           }
-        debugger
-        fetch('http://localhost:3000/api/v1/users', newObj )
+        // debugger
+        fetch('http://localhost:3000/users', newObj )
             .then(r => r.json())
-            this.props.history.push('/login')
+            // this.props.history.push('/login')
         }
 
     render(){
 
-        const size ={
-            height: 30,
-            width: 150,
-            
-        }
 
         return(
             // Sign up Form
             <div className="inner-sign-up">
             <form onSubmit={this.handleSubmit}>
-                {/* user_name input */}
+                {/* username input */}
                <div className='form-group'>
-                   <input type='text' className='form-control' placeholder='user_name'onChange={e=> this.setState({user_name: e.target.value})}/>    
+                   <input type='text' className='form-control' placeholder='username'onChange={e=> this.setState({username: e.target.value})}/>    
                </div>
                 {/* Nick_name input */}
                <div className='form-group'>
