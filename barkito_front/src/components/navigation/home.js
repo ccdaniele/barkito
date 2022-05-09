@@ -25,6 +25,10 @@ import {loginOut} from '/Users/daniel.calderon/barkito/barkito_v1.0/barkito_fron
         window.location.reload(false);
       }
 
+      handleVendors=()=>{
+        this.props.history.push('/places')
+      }
+
     render(){   
         return(
           
@@ -34,6 +38,7 @@ import {loginOut} from '/Users/daniel.calderon/barkito/barkito_v1.0/barkito_fron
                     {/* <p><Link to={'/newQuery'} className="button" id="red" >Create a new Query</Link></p>
                     <p><Link to={'/queries'} className="buttonB" >Check my queries</Link></p> */}
                      <button onClick={this.handleLogOut}>Log out</button>
+                     <button onClick={this.handleVendors}>places</button>
                 </ul>   
             </div>
               

@@ -23,7 +23,7 @@ class VendorIndex extends Component{
 }
 
   loadVendorIndex=()=>{
-    debugger
+    
     const vendorsArray = []
     
     
@@ -32,22 +32,21 @@ class VendorIndex extends Component{
       .then(resp=>resp.json())
       .then(data=>{
      
-       
+     
         vendorsArray.push(data.map(vendor))
-            this.props.vendor_index(vendorsArray) 
-    console.log('vendors from vendors')
-        })
+            this.props.vendor_index(vendorsArray)
+        }) 
 
     }
   
 
-  // handleLoading=()=>{
-  //   this.setState({loading:true})
-  //    setTimeout(()=>{
-  //      this.setState({loading:false})
-  //    },3000)
+  handleLoading=()=>{
+    this.setState({loading:true})
+     setTimeout(()=>{
+       this.setState({loading:false})
+     },3000)
 
-  //   }
+    }
      
 
   handleDelete=(e)=>{
@@ -95,9 +94,25 @@ class VendorIndex extends Component{
     
 
       return (
-          <div>
-
-          </div>
+        <div>
+        {this.props.vendors?
+        <div>
+              {this.props.vendors[0].map(vendor=>
+        <div>
+          <body>
+                <div>
+                    <div>
+                        <div>
+                            <h3>{vendor.name}</h3>
+                        </div>
+                    </div>
+                </div>
+          </body>
+        </div>
+            )} 
+        </div>
+        : <h1>loading</h1> }
+        </div>
 
 
     
