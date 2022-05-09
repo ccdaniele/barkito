@@ -12,6 +12,7 @@ export default class SignUp extends Component {
         }
     }
 
+
     handleSubmit = (e) =>{
         e.preventDefault()
 

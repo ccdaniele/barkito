@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Nav} from 'react-bootstrap'
 import Login from './components/user/login'
 import SignUp from './components/user/signUp'
+import VendorIndex from './components/vendor/vendorIndex'
 import Home from './components/navigation/home'
 import {currentUser} from './actions/user.action'
 import React, {Component} from 'react'
@@ -24,6 +25,7 @@ class App extends Component{
             <Route exact path="/" component={Home}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={SignUp}/>
+            <Route exact path="/places" component={VendorIndex}/>
           </Switch>
       </div>
     );
