@@ -1,143 +1,987 @@
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (3.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (77.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_development"[0m
-  [1m[35m (57.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_test"[0m
-  [1m[35m (482.0ms)[0m  [1m[35mCREATE DATABASE "barkito_server_development" ENCODING = 'unicode'[0m
-  [1m[35m (123.2ms)[0m  [1m[35mCREATE DATABASE "barkito_server_test" ENCODING = 'unicode'[0m
-  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (71.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_development"[0m
+  [1m[35m (48.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_test"[0m
+  [1m[35m (534.1ms)[0m  [1m[35mCREATE DATABASE "barkito_server_development" ENCODING = 'unicode'[0m
+  [1m[35m (119.7ms)[0m  [1m[35mCREATE DATABASE "barkito_server_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1357316459233772940)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateUsers (20220504203005)
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "user_borough" character varying, "user_neighborhood" character varying, "user_street" character varying, "user_city" character varying, "user_zip_code" integer, "gender" character varying, "user_description" character varying, "user_birth" date, "user_email" character varying, "password_digest" character varying, "vendor_admin" boolean, "performer_admin" boolean, "crew_member" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220504203005"]]
-  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreateVendors (20220504203043)
-  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "vendors" ("id" bigserial primary key, "vendor_name" character varying, "vendor_email" character varying, "vendor_website" character varying, "vendor_phone_number" integer, "vendor_neighborhood" character varying, "building_number" character varying, "vendor_borough" character varying, "vendor_street" character varying, "vendor_city" character varying, "zip_code" integer, "vendor_category" character varying, "vendor_subcategory" character varying, "seating" character varying, "crew" character varying, "vendor_founded_date" date, "vendor_accepted_payment" character varying, "open_time" time, "closing_time" time, "working_days" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220504203043"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreateUserVendors (20220504203105)
-  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "user_vendors" ("id" bigserial primary key, "user_id" integer, "vendor_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220504203105"]]
-  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-04 21:02:02.971445"], ["updated_at", "2022-05-04 21:02:02.971445"]]
-  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220508043428)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "borough" character varying, "neighborhood" character varying, "street" character varying, "city" character varying, "zip_code" integer, "gender" character varying, "description" character varying, "birth" date, "email" character varying, "password_digest" character varying, "vendor_admin" boolean, "performer_admin" boolean, "crew_member" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220508043428"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-08 05:03:11.758301"], ["updated_at", "2022-05-08 05:03:11.758301"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220508043428)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (1.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220508043428"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1357316459233772940)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started POST "/api/v1/users" for ::1 at 2022-05-04 17:04:47 -0400
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220508043428)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "username" character varying, "borough" character varying, "neighborhood" character varying, "street" character varying, "city" character varying, "zip_code" integer, "gender" character varying, "description" character varying, "birth" date, "email" character varying, "password_digest" character varying, "vendor_admin" boolean, "performer_admin" boolean, "crew_member" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220508043428"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:13:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   
-ActionController::RoutingError (uninitialized constant Api
+SyntaxError (/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/app/controllers/application_controller.rb:39: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:39: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:39: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:14:07 -0400
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:14:07 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x0000000111121300>, params: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "daniel"], ["username", "ccdaniele"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:14:07.842658"], ["updated_at", "2022-05-08 05:14:07.842658"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (62.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 74.3ms | Allocations: 18291)
 
-      Object.const_get(camel_cased_word)
-            ^^^^^^^^^^
 
-            raise MissingController.new(error.message, error.name)
-            ^^^^^):
   
-Started POST "/users" for ::1 at 2022-05-04 17:06:56 -0400
+ArgumentError (wrong number of arguments (given 0, expected 1)):
   
-ActionController::RoutingError (No route matches [POST] "/users"):
+app/controllers/application_controller.rb:12:in `decoded_token'
+app/controllers/application_controller.rb:24:in `current_user'
+app/controllers/api/v1/users_controller.rb:18:in `create'
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x000000011185b3a0>, params: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "daniel"], ["username", "ccdaniele"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:14:08.158486"], ["updated_at", "2022-05-08 05:14:08.158486"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 40.8ms | Allocations: 7434)
+
+
   
-Started POST "/users" for ::1 at 2022-05-04 17:08:08 -0400
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+ArgumentError (wrong number of arguments (given 0, expected 1)):
   
-SyntaxError (/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/app/controllers/users_controller.rb:49: syntax error, unexpected ':', expecting ')'
-...igest, :password_confirmation :vendor_admin, :performer_admi...
-...                              ^
-/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/app/controllers/users_controller.rb:49: syntax error, unexpected ',', expecting '.' or &. or :: or '['
-...vendor_admin, :performer_admin, :crew_member)
+app/controllers/application_controller.rb:12:in `decoded_token'
+app/controllers/application_controller.rb:24:in `current_user'
+app/controllers/api/v1/users_controller.rb:18:in `create'
+Started GET "/api/v1/users" for ::1 at 2022-05-08 01:15:40 -0400
+Processing by Api::V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 276)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/application_controller.rb:12:in `decoded_token'
+app/controllers/application_controller.rb:24:in `current_user'
+app/controllers/api/v1/users_controller.rb:27:in `index'
+Started GET "/favicon.ico" for ::1 at 2022-05-08 01:15:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:17:55 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x00000001115a18d0>, params: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "daniel"], ["username", "ccdaniele"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:17:55.330230"], ["updated_at", "2022-05-08 05:17:55.330230"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.46ms)
+Completed 201 Created in 27ms (Views: 12.2ms | ActiveRecord: 5.4ms | Allocations: 9639)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:18:57 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x0000000111802d90>, params: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "daniel"], ["username", "ccdaniele"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:18:57.410522"], ["updated_at", "2022-05-08 05:18:57.410522"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 69512ms (ActiveRecord: 6.8ms | Allocations: 62318)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:17:in `create'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:20:10 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x0000000111513c88>, params: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "daniel"], ["username", "ccdaniele"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:20:11.571386"], ["updated_at", "2022-05-08 05:20:11.571386"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.01ms)
+Completed 500 Internal Server Error in 74052ms (Views: 14.7ms | ActiveRecord: 9.7ms | Allocations: 3160551)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:23:in `create'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:25:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x000000010bbd8038>, params: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "daniel"], ["username", "ccdaniele"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:25:10.598308"], ["updated_at", "2022-05-08 05:25:10.598308"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.33ms)
+Completed 500 Internal Server Error in 87368ms (Views: 5.3ms | ActiveRecord: 8.3ms | Allocations: 101778)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:23:in `create'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:26:38 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x000000010bd8c0a0>, params: {"user"=>{"name"=>"daniel", "username"=>"ccdaniele", "email"=>"danie@gmail.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "daniel"], ["username", "ccdaniele"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:26:39.736040"], ["updated_at", "2022-05-08 05:26:39.736040"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.3ms)
+Completed 201 Created in 359ms (Views: 15.4ms | ActiveRecord: 12.3ms | Allocations: 3517239)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:27:24 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Raul", "username"=>"r", "email"=>"raul@gmail.com", "password_digest"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "Raul"], ["username", "r"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "raul@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:27:24.039918"], ["updated_at", "2022-05-08 05:27:24.039918"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.33ms)
+Completed 201 Created in 87ms (Views: 11.3ms | ActiveRecord: 4.0ms | Allocations: 1071281)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:33:29 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"daniel@gmail.com", "password_digest"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"daniel@gmail.com", "password_digest"=>"[FILTERED]"}}}
+[31mUnpermitted parameters: :email, :password_digest. Context: { controller: Api::V1::AuthController, action: create, request: #<ActionDispatch::Request:0x000000010ba9f720>, params: {"user"=>{"email"=>"daniel@gmail.com", "password_digest"=>"[FILTERED]"}, "controller"=>"api/v1/auth", "action"=>"create", "auth"=>{"user"=>{"email"=>"daniel@gmail.com", "password_digest"=>"[FILTERED]"}}} }[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.16ms)
+Completed 401 Unauthorized in 135ms (Views: 7.7ms | ActiveRecord: 25.9ms | Allocations: 1485679)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:36:39 -0400
+  
+SyntaxError (/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/app/controllers/api/v1/auth_controller.rb:6: syntax error, unexpected ')', expecting ']'
+...mail: user_login_params[:email)
 ...                              ^
 ):
   
-app/controllers/users_controller.rb:49: syntax error, unexpected ':', expecting ')'
-app/controllers/users_controller.rb:49: syntax error, unexpected ',', expecting '.' or &. or :: or '['
-app/controllers/users_controller.rb:49: syntax error, unexpected ':', expecting ')'
-app/controllers/users_controller.rb:49: syntax error, unexpected ',', expecting '.' or &. or :: or '['
-Started POST "/users" for ::1 at 2022-05-04 17:08:25 -0400
+app/controllers/api/v1/auth_controller.rb:6: syntax error, unexpected ')', expecting ']'
+app/controllers/api/v1/auth_controller.rb:6: syntax error, unexpected ')', expecting ']'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:37:17 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.95ms)
+Completed 401 Unauthorized in 146ms (Views: 12.5ms | ActiveRecord: 9.9ms | Allocations: 1694918)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:37:58 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"daniel@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"daniel@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "daniel@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.46ms)
+Completed 401 Unauthorized in 36ms (Views: 8.5ms | ActiveRecord: 1.0ms | Allocations: 398380)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-08 01:38:40 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"raul", "username"=>"raul", "email"=>"raul@gmail.com", "password_digest"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", "raul"], ["username", "raul"], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "raul@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 05:38:40.811184"], ["updated_at", "2022-05-08 05:38:40.811184"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.5ms)
+Completed 201 Created in 282ms (Views: 18.1ms | ActiveRecord: 10.3ms | Allocations: 3588652)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:38:50 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.57ms)
+Completed 401 Unauthorized in 43ms (Views: 10.9ms | ActiveRecord: 2.9ms | Allocations: 398456)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:39:02 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raul@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.2ms | Allocations: 325936)
+
+
   
-LoadError (cannot load such file -- bcrypt):
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:41:10 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 228247ms (ActiveRecord: 3.1ms | Allocations: 1484176)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:46:23 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (raul@gmail.com) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 3.5ms | Allocations: 505194)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "raul" does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE (raul@gmail.com) LIMIT $...
+                                             ^
+):
+  
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:46:31 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 16041ms (ActiveRecord: 8.4ms | Allocations: 3458224)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:47:27 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (raul@gmail.com) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.9ms | Allocations: 504325)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "raul" does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE (raul@gmail.com) LIMIT $...
+                                             ^
+):
+  
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:48:03 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.04ms)
+Completed 401 Unauthorized in 130ms (Views: 12.5ms | ActiveRecord: 4.0ms | Allocations: 1638820)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 01:48:45 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raul@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 344ms (ActiveRecord: 9.9ms | Allocations: 3763286)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/v1/login" for ::1 at 2022-05-08 11:58:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 20ms (Views: 1.8ms | ActiveRecord: 2.7ms | Allocations: 7304)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:01:04 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>" raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>" raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", " raul@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 37462ms (ActiveRecord: 2.7ms | Allocations: 33168)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:01:51 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 205122ms (ActiveRecord: 0.0ms | Allocations: 146647)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `process_action'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:05:24 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 7163ms (ActiveRecord: 0.0ms | Allocations: 134553)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `user_login_params'
+app/controllers/api/v1/auth_controller.rb:30:in `user_login_params'
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:05:58 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameters: :email, :password. Context: { controller: Api::V1::AuthController, action: create, request: #<ActionDispatch::Request:0x0000000113715430>, params: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"api/v1/auth", "action"=>"create", "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+[31mUnpermitted parameters: :email, :password. Context: { controller: Api::V1::AuthController, action: create, request: #<ActionDispatch::Request:0x0000000113715430>, params: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"api/v1/auth", "action"=>"create", "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 510406ms (Allocations: 259558)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `process_action'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:14:39 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 41060ms (Allocations: 62870)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `process_action'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:15:33 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 19043ms (Allocations: 58147)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:16:03 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 23790ms (Allocations: 52034)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `rescue in process_action'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:20:53 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raul@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 513ms (ActiveRecord: 37.0ms | Allocations: 5507081)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:21:24 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"email"=>"raul@gmaail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmaail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raul@gmaail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.05ms)
+Completed 401 Unauthorized in 42ms (Views: 12.3ms | ActiveRecord: 3.4ms | Allocations: 442508)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:22:08 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raul@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.0ms | Allocations: 322027)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:22:27 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 36781ms (ActiveRecord: 0.0ms | Allocations: 214646)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `user_login_params'
+app/controllers/api/v1/auth_controller.rb:31:in `user_login_params'
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:24:06 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 4001ms (ActiveRecord: 0.0ms | Allocations: 55849)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:25:28 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 3326ms (ActiveRecord: 0.0ms | Allocations: 41436)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:26:07 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 38482)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:26:14 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 72549ms (ActiveRecord: 0.0ms | Allocations: 65789)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:27:27 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.14ms)
+Completed 401 Unauthorized in 186ms (Views: 16.4ms | ActiveRecord: 4.1ms | Allocations: 1638816)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:27:48 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raul@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 7.7ms | Allocations: 2567115)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:29:52 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 5336ms (ActiveRecord: 0.0ms | Allocations: 71490034)
+
+
+  
+NoMethodError (undefined method `attributes' for User:Class
+Did you mean?  attribute):
   
 app/models/user.rb:2:in `<class:User>'
 app/models/user.rb:1:in `<main>'
-Started POST "/users" for ::1 at 2022-05-04 17:09:48 -0400
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:30:42 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 5794ms (ActiveRecord: 0.0ms | Allocations: 92465751)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for User:Class
+Did you mean?  attr_accessor):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:31:03 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.83ms)
+Completed 401 Unauthorized in 130ms (Views: 11.1ms | ActiveRecord: 5.3ms | Allocations: 1639472)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:31:24 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"raul@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raul@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 4.8ms | Allocations: 2567653)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:32:14 -0400
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by UsersController#create as JSON
-  Parameters: {"user"=>{"nick_name"=>"tadeo", "user_email"=>"j@tadeo.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
-[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000010ca5c988>, params: {"user"=>{"nick_name"=>"tadeo", "user_email"=>"j@tadeo.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
-[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
-Completed 422 Unprocessable Entity in 46ms (Views: 3.7ms | ActiveRecord: 5.7ms | Allocations: 17575)
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 16ms (Views: 1.6ms | ActiveRecord: 1.8ms | Allocations: 7304)
 
 
-Started POST "/users" for ::1 at 2022-05-04 17:11:28 -0400
-Processing by UsersController#create as JSON
-  Parameters: {"user"=>{"username"=>"tadeo", "user_email"=>"j@tadeo.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
-[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000010d4624f0>, params: {"user"=>{"username"=>"tadeo", "user_email"=>"j@tadeo.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "controller"=>"users", "action"=>"create"} }[0m
-[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
-Completed 422 Unprocessable Entity in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1030)
-
-
-Started POST "/users" for ::1 at 2022-05-04 17:20:26 -0400
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by UsersController#create as JSON
-  Parameters: {"user"=>{"username"=>"tadeo", "user_email"=>"j@tadeo.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/users_controller.rb:19:in `create'
-  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_borough", "user_neighborhood", "user_street", "user_city", "user_zip_code", "gender", "user_description", "user_birth", "user_email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["username", "tadeo"], ["user_borough", nil], ["user_neighborhood", nil], ["user_street", nil], ["user_city", nil], ["user_zip_code", nil], ["gender", nil], ["user_description", nil], ["user_birth", nil], ["user_email", "j@tadeo.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-04 21:20:26.505196"], ["updated_at", "2022-05-04 21:20:26.505196"]]
-  ↳ app/controllers/users_controller.rb:19:in `create'
-  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/users_controller.rb:19:in `create'
-Completed 500 Internal Server Error in 31ms (ActiveRecord: 6.6ms | Allocations: 15681)
-
-
-  
-SyntaxError (/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/app/serializers/user_serializer.rb:2: syntax error, unexpected ':', expecting `end'
-...igest, :password_confirmation :vendor_admin, :performer_admi...
-...                              ^
-/Users/daniel.calderon/barkito/barkito_v1.0/barkito_server/app/serializers/user_serializer.rb:2: syntax error, unexpected ',', expecting '.' or &. or :: or '['
-...vendor_admin, :performer_admin, :crew_member
-...                              ^
-):
-  
-app/serializers/user_serializer.rb:2: syntax error, unexpected ':', expecting `end'
-app/serializers/user_serializer.rb:2: syntax error, unexpected ',', expecting '.' or &. or :: or '['
-app/serializers/user_serializer.rb:2: syntax error, unexpected ':', expecting `end'
-app/serializers/user_serializer.rb:2: syntax error, unexpected ',', expecting '.' or &. or :: or '['
-app/controllers/users_controller.rb:20:in `create'
-Started POST "/users" for ::1 at 2022-05-04 17:21:39 -0400
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by UsersController#create as JSON
-  Parameters: {"user"=>{"username"=>"tadeo", "user_email"=>"j@tadeo.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/users_controller.rb:19:in `create'
-  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_borough", "user_neighborhood", "user_street", "user_city", "user_zip_code", "gender", "user_description", "user_birth", "user_email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["username", "tadeo"], ["user_borough", nil], ["user_neighborhood", nil], ["user_street", nil], ["user_city", nil], ["user_zip_code", nil], ["gender", nil], ["user_description", nil], ["user_birth", nil], ["user_email", "j@tadeo.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-04 21:21:39.242663"], ["updated_at", "2022-05-04 21:21:39.242663"]]
-  ↳ app/controllers/users_controller.rb:19:in `create'
-  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/users_controller.rb:19:in `create'
-[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
-Completed 201 Created in 49ms (Views: 20.7ms | ActiveRecord: 7.6ms | Allocations: 18123)
-
-
-Started POST "/users" for ::1 at 2022-05-04 17:21:51 -0400
-Processing by UsersController#create as JSON
-  Parameters: {"user"=>{"username"=>"tadeo", "user_email"=>"j@tadeo.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/users_controller.rb:19:in `create'
-  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "user_borough", "user_neighborhood", "user_street", "user_city", "user_zip_code", "gender", "user_description", "user_birth", "user_email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["username", "tadeo"], ["user_borough", nil], ["user_neighborhood", nil], ["user_street", nil], ["user_city", nil], ["user_zip_code", nil], ["gender", nil], ["user_description", nil], ["user_birth", nil], ["user_email", "j@tadeo.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-04 21:21:51.733943"], ["updated_at", "2022-05-04 21:21:51.733943"]]
-  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (62.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_development"[0m
+  [1m[35m (57.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_test"[0m
+  [1m[35m (240.0ms)[0m  [1m[35mCREATE DATABASE "barkito_server_development" ENCODING = 'unicode'[0m
+  [1m[35m (135.3ms)[0m  [1m[35mCREATE DATABASE "barkito_server_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220508043428)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "username" character varying, "borough" character varying, "neighborhood" character varying, "street" character varying, "city" character varying, "zip_code" integer, "gender" character varying, "description" character varying, "birth" date, "email" character varying, "password_digest" character varying, "vendor_admin" boolean, "performer_admin" boolean, "crew_member" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220508043428"]]
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/users_controller.rb:19:in `create'
-[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
-Completed 201 Created in 8ms (Views: 0.8ms | ActiveRecord: 1.9ms | Allocations: 2558)
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-08 16:34:08.634941"], ["updated_at", "2022-05-08 16:34:08.634941"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", nil], ["username", nil], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-08 16:35:09.419298"], ["updated_at", "2022-05-08 16:35:09.419298"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "danie@gmail.com"], ["LIMIT", 1]]
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:36:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 16ms (Views: 1.5ms | ActiveRecord: 3.0ms | Allocations: 7304)
 
 
-  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:36:55 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "danie@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 7.2ms | Allocations: 10459)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:37:03 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 401 Unauthorized in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 889)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:37:08 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 749)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:37:15 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"hola", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"hola", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hola"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 734)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:38:14 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "danie@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 702)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:39:26 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 734)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:40:03 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "danie@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 687)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:40:44 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "danie@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 687)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:41:19 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 15631ms (ActiveRecord: 0.0ms | Allocations: 33136)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:6:in `create'
+Started POST "/api/v1/login" for ::1 at 2022-05-08 12:42:01 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"danie@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "danie@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 27043740ms (ActiveRecord: 12.5ms | Allocations: 2878139)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:7:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (64.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_development"[0m
+  [1m[35m (98.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_test"[0m
+  [1m[35m (298.1ms)[0m  [1m[35mCREATE DATABASE "barkito_server_development" ENCODING = 'unicode'[0m
+  [1m[35m (90.4ms)[0m  [1m[35mCREATE DATABASE "barkito_server_test" ENCODING = 'unicode'[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220508043428)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "username" character varying, "borough" character varying, "neighborhood" character varying, "street" character varying, "city" character varying, "zip_code" integer, "gender" character varying, "description" character varying, "birth" date, "email" character varying, "password_digest" character varying, "vendor_admin" boolean, "performer_admin" boolean, "crew_member" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220508043428"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-09 00:44:32.970712"], ["updated_at", "2022-05-09 00:44:32.970712"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", nil], ["username", nil], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "danie@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-09 00:45:28.836174"], ["updated_at", "2022-05-09 00:45:28.836174"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", nil], ["username", nil], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "kimita@gmail.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-09 01:04:56.406791"], ["updated_at", "2022-05-09 01:04:56.406791"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/users" for ::1 at 2022-05-08 21:10:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@d.com", "password_digest"=>"[FILTERED]"}}
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms | Allocations: 2662)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-08 21:14:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@d.com", "password_digest"=>"[FILTERED]"}}
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms | Allocations: 2662)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-08 21:14:24 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@d.com", "password_digest"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 192704ms (ActiveRecord: 0.0ms | Allocations: 39610)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:25:in `create'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 22:13:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@y.com", "password_digest"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 415544ms (ActiveRecord: 0.0ms | Allocations: 43954)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:21:in `create'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 22:23:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@g.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_digest. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x00000001081c2268>, params: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@g.com", "password_digest"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 406 Not Acceptable in 27ms (Views: 2.8ms | ActiveRecord: 7.6ms | Allocations: 14302)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-08 22:24:08 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@g.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_digest. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x0000000107f9d6e0>, params: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@g.com", "password_digest"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 406 Not Acceptable in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 691)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-08 22:25:27 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@g.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_digest. Context: { controller: Api::V1::UsersController, action: create, request: #<ActionDispatch::Request:0x00000001083681f8>, params: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@g.com", "password_digest"=>"[FILTERED]"}, "controller"=>"api/v1/users", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 231152ms (ActiveRecord: 0.0ms | Allocations: 41275)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:16:in `create'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 22:31:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@gg.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 16580ms (ActiveRecord: 0.0ms | Allocations: 33507)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/users_controller.rb:16:in `create'
+Started POST "/api/v1/users" for ::1 at 2022-05-08 22:31:32 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "username"=>"", "email"=>"d@gg.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "borough", "neighborhood", "street", "city", "zip_code", "gender", "description", "birth", "email", "password_digest", "vendor_admin", "performer_admin", "crew_member", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["name", ""], ["username", ""], ["borough", nil], ["neighborhood", nil], ["street", nil], ["city", nil], ["zip_code", nil], ["gender", nil], ["description", nil], ["birth", nil], ["email", "d@gg.com"], ["password_digest", "[FILTERED]"], ["vendor_admin", nil], ["performer_admin", nil], ["crew_member", nil], ["created_at", "2022-05-09 02:31:33.712967"], ["updated_at", "2022-05-09 02:31:33.712967"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.82ms)
+Completed 201 Created in 517ms (Views: 23.8ms | ActiveRecord: 10.9ms | Allocations: 3365485)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 22:32:06 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"d@gg.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"d@gg.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d@gg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.76ms)
+Completed 202 Accepted in 289ms (Views: 11.7ms | ActiveRecord: 2.2ms | Allocations: 619931)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 22:49:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 45ms (Views: 5.1ms | ActiveRecord: 2.7ms | Allocations: 7458)
+
+
+Started POST "/api/v1/login" for ::1 at 2022-05-08 22:49:46 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email"=>"d@gg.com", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"d@gg.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d@gg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.52ms)
+Completed 202 Accepted in 264ms (Views: 3.0ms | ActiveRecord: 5.4ms | Allocations: 11237)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (3.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (169.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_development"[0m
+  [1m[35m (115.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "barkito_server_test"[0m
+  [1m[35m (267.8ms)[0m  [1m[35mCREATE DATABASE "barkito_server_development" ENCODING = 'unicode'[0m
+  [1m[35m (340.0ms)[0m  [1m[35mCREATE DATABASE "barkito_server_test" ENCODING = 'unicode'[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220508043428)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "username" character varying, "borough" character varying, "neighborhood" character varying, "street" character varying, "city" character varying, "zip_code" integer, "gender" character varying, "description" character varying, "birth" date, "email" character varying, "password_digest" character varying, "vendor_admin" boolean, "performer_admin" boolean, "crew_member" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220508043428"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-09 02:52:07.795985"], ["updated_at", "2022-05-09 02:52:07.795985"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1357316459233772940)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

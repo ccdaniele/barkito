@@ -4,9 +4,9 @@ export default class SignUp extends Component {
     constructor(){
         super()
         this.state={
+            name:'',
             username:'',
-            nick_name:'',
-            user_email:'',
+            email:'',
             password:'',
             passwordConfirm:''
         }
@@ -23,18 +23,21 @@ export default class SignUp extends Component {
             },
             body: JSON.stringify({
               user: {
-                username: this.state.nick_name,
-                user_email: this.state.email,
-                password_digest: this.state.password,
-                password_confirmation: this.state.passwordConfirm
+                name: this.state.name,
+                username: this.state.username,
+                email: this.state.email,
+                password: this.state.password
+                // password_confirmation: this.state.passwordConfirm
               }
             })
           }
         // debugger
-        fetch('http://localhost:3000/users', newObj )
+        fetch('http://localhost:3000/api/v1/users', newObj )
             .then(r => r.json())
-            // this.props.history.push('/login')
+            this.props.history.push('/login')
         }
+
+
 
     render(){
 
@@ -45,11 +48,11 @@ export default class SignUp extends Component {
             <form onSubmit={this.handleSubmit}>
                 {/* username input */}
                <div className='form-group'>
-                   <input type='text' className='form-control' placeholder='username'onChange={e=> this.setState({username: e.target.value})}/>    
+                   <input type='text' className='form-control' placeholder='name'onChange={e=> this.setState({name: e.target.value})}/>    
                </div>
-                {/* Nick_name input */}
+                {/* username input */}
                <div className='form-group'>
-                   <input type='text' className='form-control' placeholder='nick_name'onChange={e=> this.setState({nick_name: e.target.value})}/>    
+                   <input type='text' className='form-control' placeholder='username'onChange={e=> this.setState({username: e.target.value})}/>    
                </div>
                {/* Email input */}
                <div className='form-group'>

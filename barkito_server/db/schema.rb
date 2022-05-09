@@ -10,56 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_203105) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_08_043428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "user_vendors", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "vendor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "username"
-    t.string "user_borough"
-    t.string "user_neighborhood"
-    t.string "user_street"
-    t.string "user_city"
-    t.integer "user_zip_code"
+    t.string "borough"
+    t.string "neighborhood"
+    t.string "street"
+    t.string "city"
+    t.integer "zip_code"
     t.string "gender"
-    t.string "user_description"
-    t.date "user_birth"
-    t.string "user_email"
+    t.string "description"
+    t.date "birth"
+    t.string "email"
     t.string "password_digest"
     t.boolean "vendor_admin"
     t.boolean "performer_admin"
     t.boolean "crew_member"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vendors", force: :cascade do |t|
-    t.string "vendor_name"
-    t.string "vendor_email"
-    t.string "vendor_website"
-    t.integer "vendor_phone_number"
-    t.string "vendor_neighborhood"
-    t.string "building_number"
-    t.string "vendor_borough"
-    t.string "vendor_street"
-    t.string "vendor_city"
-    t.integer "zip_code"
-    t.string "vendor_category"
-    t.string "vendor_subcategory"
-    t.string "seating"
-    t.string "crew"
-    t.date "vendor_founded_date"
-    t.string "vendor_accepted_payment"
-    t.time "open_time"
-    t.time "closing_time"
-    t.string "working_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

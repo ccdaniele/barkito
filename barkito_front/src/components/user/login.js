@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {loginSuccess} from '/Users/daniel.calderon/barkito/barkito_v1.0/barkito_front/src/actions/user.action.js'
+import {loginSuccess, loginOut} from '/Users/daniel.calderon/barkito/barkito_v1.0/barkito_front/src/actions/user.action.js'
 
  class Login extends Component {
      constructor(){
         super()
         this.state={
-            nick_name:'',
+            email:'',
             password:'',
             loginSuccess:" ",
             error: ''
@@ -28,20 +28,19 @@ import {loginSuccess} from '/Users/daniel.calderon/barkito/barkito_v1.0/barkito_
             },
             body: JSON.stringify({
               user: {
-                nick_name: this.state.nick_name,
+                email: this.state.email,
                 password: this.state.password
               }
             })}
           
     // Reseting states
-
             this.setState({
-              nick_name: '',
+              email: '',
               password: ''
             })
     // FETCH request
 
-        fetch('http://localhost:3000//api/v1/login', newObj)
+        fetch('http://localhost:3000/api/v1/login', newObj)
           
           .then(resp => resp.json())
           .then(data => {
@@ -70,7 +69,15 @@ import {loginSuccess} from '/Users/daniel.calderon/barkito/barkito_v1.0/barkito_
             this.props.history.push('/')
             }
           })
+          
       }
+
+    handleLogOut=()=>{
+    
+      localStorage.clear()
+      this.props.loginOut()
+      window.location.reload(false);
+    }
 
     render(){
         return(
@@ -79,12 +86,12 @@ import {loginSuccess} from '/Users/daniel.calderon/barkito/barkito_v1.0/barkito_
               {this.state.error? <h4 style={{color:'white'}}>{this.state.error}</h4> : null}
               {/* Display form */}
                 <form onSubmit={this.handleSubmit}>
-                    {/* Display nick_name space */}
+                    {/* Display email space */}
                     <div className='form-group'>
                         <label className="form-text"></label>
-                     <input type='text' className='form-control' placeholder='nick_name' onChange={e=> this.setState({nick_name: e.target.value})}/>       
+                     <input type='text' className='form-control' placeholder='email' onChange={e=> this.setState({email: e.target.value})}/>       
                     </div>
-                    {/* Display password space */}
+                    {/* Display password_digest space */}
                     <div className='form-group'>
                         <label  className="form-text"></label>
                     <input type='password' className='form-control' placeholder='Password' onChange={e=> this.setState({password: e.target.value})}/>
@@ -105,7 +112,7 @@ const mapStateToProps = (state)=>{
 }
 
 const mapDispatchToProps = {
-    loginSuccess
+    loginSuccess, loginOut,
 }
 
 

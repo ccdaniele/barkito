@@ -1,16 +1,17 @@
 class CreateUsers < ActiveRecord::Migration[7.0]
   def change
     create_table :users do |t|
+      t.string :name
       t.string :username
-      t.string :user_borough
-      t.string :user_neighborhood
-      t.string :user_street
-      t.string :user_city
-      t.integer :user_zip_code
+      t.string :borough
+      t.string :neighborhood
+      t.string :street
+      t.string :city
+      t.integer :zip_code
       t.string :gender
-      t.string :user_description
-      t.date :user_birth
-      t.string :user_email
+      t.string :description
+      t.date :birth
+      t.string :email
       t.string :password_digest
       t.boolean :vendor_admin
       t.boolean :performer_admin
