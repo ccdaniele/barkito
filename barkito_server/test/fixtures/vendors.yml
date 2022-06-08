@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor_name: MyString
+  vendor_email: MyString
+  vendor_website: MyString
+  vendor_phone_number: 1
+  vendor_neighborhood: MyString
+  building_number: MyString
+  vendor_borough: MyString
+  vendor_street: MyString
+  vendor_city: MyString
+  zip_code: 1
+  vendor_category: MyString
+  vendor_subcategory: MyString
+  seating: MyString
+  crew: MyString
+  vendor_founded_date: 2022-05-03
+  vendor_accepted_payment: MyString
+  open_time: 2022-05-03 09:33:19
+  closing_time: 2022-05-03 09:33:19
+  working_days: MyString
+
+two:
+  vendor_name: MyString
+  vendor_email: MyString
+  vendor_website: MyString
+  vendor_phone_number: 1
+  vendor_neighborhood: MyString
+  building_number: MyString
+  vendor_borough: MyString
+  vendor_street: MyString
+  vendor_city: MyString
+  zip_code: 1
+  vendor_category: MyString
+  vendor_subcategory: MyString
+  seating: MyString
+  crew: MyString
+  vendor_founded_date: 2022-05-03
+  vendor_accepted_payment: MyString
+  open_time: 2022-05-03 09:33:19
+  closing_time: 2022-05-03 09:33:19
+  working_days: MyString
