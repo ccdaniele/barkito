@@ -5,7 +5,6 @@ import TheNavbar from './components/TheNavbar.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import 'agnostic-vue/dist/common.min.css' // Import AgnosticUI's common CSS
 import 'agnostic-vue/dist/index.css' // Import AgnosticUI's component-specific CSS
-import axios from 'axios';
 </script>
 
 <template>

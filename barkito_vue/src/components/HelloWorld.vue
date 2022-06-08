@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 import { Card, Input, Button } from "agnostic-vue";
 export default {
   name: "HelloWorld",
