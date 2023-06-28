@@ -7,7 +7,11 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
+<<<<<<< HEAD
     origins '*'
+=======
+    origins "*"
+>>>>>>> 6d013a78 (next.js migration)
 
     resource "*",
       headers: :any,

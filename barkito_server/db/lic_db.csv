@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 seating,vendor_name,building_number,vendor_street,vendor_borough,zip_code,vendor_neighborhood
+=======
+seating,name,building_number,street,borough,zip_code,neighborhood
+>>>>>>> 6d013a78 (next.js migration)
 sidewalk,la choza del gordo restaurant,4105,northern blvd,Queens,11101,Astoria
 sidewalk,uno,37-11,35th ave,Queens,11101,Astoria
 roadway,no 5,No 5,3543 37th st,Queens,11101,Astoria
