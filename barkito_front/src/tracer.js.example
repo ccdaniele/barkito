@@ -1,0 +1,7 @@
+import tracer from 'dd-trace';
+import 'dd-trace/init';
+tracer.init(); // initialized in a different file to avoid hoisting.
+
+
+
+export default tracer;
